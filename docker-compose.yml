@@ -10,16 +10,17 @@ services:
       - ./docker/server/site.conf:/etc/nginx/conf.d/default.conf
       - ./server:/srv
     depends_on:
-      - php-fpm
+      - php-server
 
-  php-fpm:
+  php-server:
+    container_name: website-news-php-server
     build: ./docker/server
     restart: on-failure
     volumes:
       - ./server:/srv
 
   db:
-    container_name: aca-saclms-db
+    container_name: website-news-db
     build: ./docker/db
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -34,7 +35,7 @@ services:
       - 3306:3306
 
   phpmyadmin:
-    container_name: aca-saclms-phpmyadmin
+    container_name: website-news-phpmyadmin
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
@@ -45,7 +46,7 @@ services:
       - 8080:80
 
   composer:
-    container_name: aca-saclms-composer
+    container_name: website-news-composer
     image: composer
     command: 'composer install -o'
     volumes:

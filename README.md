@@ -1,24 +1,28 @@
-# 契約関連統合管理システム（SACLMS）
- 
-## 開発環境の起動手順
-### 1. サーバー環境を起動
-~~~bash
-$ ./up_server.sh
-~~~
+# Website-news
 
-### 2. 管理画面へアクセス
-- [http://127.0.0.1/](http://127.0.0.1/)
+## Development setting
 
-### 3. サーバー環境の停止
-~~~bash
-$ ./down.sh
-~~~
+- Step 1: Create .env file
+```bash
+cp server/.env.example server/.env
+```
 
-## デプロイ
-### ステージング
-`./deploy-staging.sh`  
-(developブランチ / eyemovicメンバーのみ)
+- Step 2: Start docker-compose services
+```bash
+./up.sh
+```
 
-...もしくは...
+- Step 3: Generate Laravel's key
+```bash
+./generate-laravel-key.sh
+```
 
-`php deployer.phar -f server/deploy.php deploy staging`
+## Init Database
+```bash
+./init-db.sh
+```
+
+## Stop
+```bash
+./down.sh
+```
