@@ -1,2 +1,2 @@
 #!/bin/sh
-docker-compose exec php-fpm bash -c 'php artisan optimize:clear'
+docker-compose exec php-server bash -c 'php artisan optimize:clear'

@@ -25,4 +25,4 @@ ENV PHP_IDE_CONFIG 'serverName=localhost'
 
 WORKDIR /srv
 
-CMD php-fpm
+CMD php-server
