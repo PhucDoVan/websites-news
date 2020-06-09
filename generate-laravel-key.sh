@@ -1,2 +1,2 @@
 #!/bin/sh
-docker-compose exec server bash -c "php artisan key:generate"
+docker-compose exec php-server bash -c "php artisan key:generate"
