@@ -69,7 +69,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <img src="{{asset('dist/img/user1-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -85,7 +86,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{asset('dist/img/user8-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     John Pierce
@@ -101,7 +103,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -157,7 +160,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
@@ -176,7 +180,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
@@ -826,7 +831,8 @@
                                          style="position: relative; height: 300px;">
                                         <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
                                     </div>
-                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                                    <div class="chart tab-pane" id="sales-chart"
+                                         style="position: relative; height: 300px;">
                                         <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
                                     </div>
                                 </div>
@@ -840,7 +846,8 @@
                                 <h3 class="card-title">Direct Chat</h3>
 
                                 <div class="card-tools">
-                                    <span data-toggle="tooltip" title="3 New Messages" class="badge badge-primary">3</span>
+                                    <span data-toggle="tooltip" title="3 New Messages"
+                                          class="badge badge-primary">3</span>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
                                     </button>
@@ -848,7 +855,8 @@
                                             data-widget="chat-pane-toggle">
                                         <i class="fas fa-comments"></i>
                                     </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                            class="fas fa-times"></i>
                                     </button>
                                 </div>
                             </div>
@@ -863,7 +871,8 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"
+                                             alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Is this template really for free? That's unbelievable!
@@ -879,7 +888,8 @@
                                             <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('dist/img/user3-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dist/img/user3-128x128.jpg')}}"
+                                             alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             You better believe it!
@@ -895,7 +905,8 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"
+                                             alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             Working with AdminLTE on a great new app! Wanna join?
@@ -911,7 +922,8 @@
                                             <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="{{asset('dist/img/user3-128x128.jpg')}}" alt="message user image">
+                                        <img class="direct-chat-img" src="{{asset('dist/img/user3-128x128.jpg')}}"
+                                             alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
                                             I would love to.
@@ -928,7 +940,8 @@
                                     <ul class="contacts-list">
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user1-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user1-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -943,7 +956,8 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user7-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user7-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -958,7 +972,8 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user3-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user3-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -973,7 +988,8 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user5-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user5-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -988,7 +1004,8 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user6-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user6-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -1003,7 +1020,8 @@
                                         <!-- End Contact Item -->
                                         <li>
                                             <a href="#">
-                                                <img class="contacts-list-img" src="{{asset('dist/img/user8-128x128.jpg')}}">
+                                                <img class="contacts-list-img"
+                                                     src="{{asset('dist/img/user8-128x128.jpg')}}">
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -1025,7 +1043,8 @@
                             <div class="card-footer">
                                 <form action="#" method="post">
                                     <div class="input-group">
-                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                        <input type="text" name="message" placeholder="Type Message ..."
+                                               class="form-control">
                                         <span class="input-group-append">
                       <button type="button" class="btn btn-primary">Send</button>
                     </span>
@@ -1064,7 +1083,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
                                         <!-- checkbox -->
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo1" id="todoCheck1">
                                             <label for="todoCheck1"></label>
                                         </div>
@@ -1083,7 +1102,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
                                             <label for="todoCheck2"></label>
                                         </div>
@@ -1099,7 +1118,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo3" id="todoCheck3">
                                             <label for="todoCheck3"></label>
                                         </div>
@@ -1115,7 +1134,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo4" id="todoCheck4">
                                             <label for="todoCheck4"></label>
                                         </div>
@@ -1131,7 +1150,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo5" id="todoCheck5">
                                             <label for="todoCheck5"></label>
                                         </div>
@@ -1147,12 +1166,13 @@
                       <i class="fas fa-ellipsis-v"></i>
                       <i class="fas fa-ellipsis-v"></i>
                     </span>
-                                        <div  class="icheck-primary d-inline ml-2">
+                                        <div class="icheck-primary d-inline ml-2">
                                             <input type="checkbox" value="" name="todo6" id="todoCheck6">
                                             <label for="todoCheck6"></label>
                                         </div>
                                         <span class="text">Let theme shine like a star</span>
-                                        <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
+                                        <small class="badge badge-secondary"><i class="far fa-clock"></i> 1
+                                            month</small>
                                         <div class="tools">
                                             <i class="fas fa-edit"></i>
                                             <i class="fas fa-trash-o"></i>
@@ -1162,7 +1182,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
+                                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add
+                                    item
+                                </button>
                             </div>
                         </div>
                         <!-- /.card -->
@@ -1241,27 +1263,31 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas class="chart" id="line-chart"
+                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer bg-transparent">
                                 <div class="row">
                                     <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                                        <input type="text" class="knob" data-readonly="true" value="20" data-width="60"
+                                               data-height="60"
                                                data-fgColor="#39CCCC">
 
                                         <div class="text-white">Mail-Orders</div>
                                     </div>
                                     <!-- ./col -->
                                     <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                                        <input type="text" class="knob" data-readonly="true" value="50" data-width="60"
+                                               data-height="60"
                                                data-fgColor="#39CCCC">
 
                                         <div class="text-white">Online</div>
                                     </div>
                                     <!-- ./col -->
                                     <div class="col-4 text-center">
-                                        <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                                        <input type="text" class="knob" data-readonly="true" value="30" data-width="60"
+                                               data-height="60"
                                                data-fgColor="#39CCCC">
 
                                         <div class="text-white">In-Store</div>
@@ -1286,7 +1312,8 @@
                                 <div class="card-tools">
                                     <!-- button with a dropdown -->
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                                        <button type="button" class="btn btn-success btn-sm dropdown-toggle"
+                                                data-toggle="dropdown" data-offset="-52">
                                             <i class="fas fa-bars"></i></button>
                                         <div class="dropdown-menu" role="menu">
                                             <a href="#" class="dropdown-item">Add new event</a>

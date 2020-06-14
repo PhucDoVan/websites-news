@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 //Admin route
 Route::prefix('admin')->name('admin.')->group(function () {
-//    Route::get('login', 'Admin\Auth\LoginController@getLogin')->name('login');
+    Route::get('register', 'Admin\Auth\RegisterController@getRegister')->name('register');
+    Route::get('login', 'Admin\Auth\LoginController@getLogin')->name('login');
 //    Route::post('login', 'Admin\Auth\LoginController@postLogin');
     Route::get('dashboard', 'Admin\DashboardController@index')->name('dashboard');
     Route::group(['middleware' => ['checkLoginUser', 'preventBackButton']], function () {
