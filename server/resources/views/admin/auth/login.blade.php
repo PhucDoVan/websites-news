@@ -6,19 +6,21 @@
             <div class="signin-content">
                 <div class="signin-image">
                     <figure><img src="{{asset('images/signin-image.jpg')}}" alt="sing up image"></figure>
-                    <a href="{{route('admin.register')}}" class="signup-image-link">Create an account</a>
+                    <a href="" class="signup-image-link">Create an account</a>
                 </div>
 
                 <div class="signin-form">
                     <h2 class="form-title">Sign up</h2>
                     <form method="POST" class="register-form" id="login-form">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        @csrf
                         <div class="form-group">
-                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" placeholder="Username"/>
                         </div>
                         <div class="form-group">
-                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" placeholder="Password"/>
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term"/>
@@ -26,9 +28,21 @@
                                 me</label>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            <input type="submit" name="signin" class="form-submit" value="Log In"/>
                         </div>
                     </form>
+                    @if(isset($errors))
+                        <p style="color: red;">
+                            @foreach($errors->all() as $error)
+                                {!! $error !!}<br/>
+                            @endforeach
+                        </p>
+                    @endif
+                    @if(isset($message))
+                        <p style="color: red;">
+                            {!! $message !!}
+                        </p>
+                    @endif
                     <div class="social-login">
                         <span class="social-label">Or login with</span>
                         <ul class="socials">
