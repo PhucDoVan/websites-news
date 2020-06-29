@@ -1,4 +1,5 @@
-@extends('admin.auth.master')
+@extends('admin.layouts.master')
+@section('title', 'Login')
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @section('content')
     <!-- Sing in  Form -->

@@ -1,8 +1,9 @@
-@extends('admin.auth.master')
+@extends('admin.layouts.master')
+@section('title', 'Change Password')
 @section('content')
     <div class="container">
         <div class="col-md-6 offset-md-3">
-            <div class="card card-outline-secondary">
+            <div class="card card-outline-secondary mt-5">
                 <div class="card-header">
                     <h3 class="mb-0">Change Password</h3>
                 </div>
@@ -21,9 +22,9 @@
                         @csrf
                         <div class="form-group">
                             <label for="current-password">Current Password</label>
-                            <input id="current-password" type="password" class="form-control" name="password" required>
+                            <input id="current-password" type="password" class="form-control" name="password">
                             @if ($errors->has('password'))
-                                <span class="help-block">
+                                <span class="help-block" style="color:red;">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
                             @endif
@@ -31,9 +32,9 @@
                         <div class="form-group">
                             <label for="new-password">New Password</label>
                             <input id="new-password" type="password" class="form-control"
-                                   name="new-password" required>
+                                   name="new-password">
                             @if ($errors->has('new-password'))
-                                <span class="help-block">
+                                <span class="help-block" style="color:red;">
                                     <strong>{{ $errors->first('new-password') }}</strong>
                                 </span>
                             @endif
@@ -44,7 +45,7 @@
                         <div class="form-group">
                             <label for="new-password-confirm">Confirm New Password</label>
                             <input id="new-password-confirm" type="password" class="form-control"
-                                   name="new-password_confirmation" required>
+                                   name="new-password_confirmation">
                             <span class="form-text small text-muted">
                                 To confirm, type the new password again.
                             </span>

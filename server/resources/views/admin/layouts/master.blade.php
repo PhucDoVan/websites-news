@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="_token" content="{{ csrf_token() }}"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Form</title>
+    <title>@yield('title')</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">

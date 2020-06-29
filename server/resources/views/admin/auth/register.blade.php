@@ -1,4 +1,4 @@
-@extends('admin.auth.master')
+@extends('admin.layouts.master')
 @section('form')
     <!-- Sign up form -->
     <section class="signup">

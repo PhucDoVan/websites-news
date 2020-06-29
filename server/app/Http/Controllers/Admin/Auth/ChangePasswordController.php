@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class ChangePasswordController extends Controller
 {
@@ -29,7 +30,16 @@ class ChangePasswordController extends Controller
         return url('admin/menu');
     }
 
-    public function postChangePassword(Request $request){
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+            'password' => 'required|string',
+            'new-password' => 'required|string|min:5|max:20|confirmed',
+        ]);
+    }
+
+    public function postChangePassword(Request $request)
+    {
 
         if (!(Hash::check($request->get('password'), Auth::user()->password))) {
             // The passwords matches
@@ -40,17 +50,16 @@ class ChangePasswordController extends Controller
             //Current password and new password are same
             return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
         }
-
-        $validatedData = $request->validate([
-            'password' => 'required',
-            'new-password' => 'required|string|min:5|max:20|confirmed',
-        ]);
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            return redirect()->route('admin.change_password')->withInput()->withErrors($validator);
+        }
 
         //Change Password
         $user = Auth::user();
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
-        return redirect()->back()->with("success","Password changed successfully !");
+        return redirect()->back()->with("success", "Password changed successfully !");
 
     }
 }
