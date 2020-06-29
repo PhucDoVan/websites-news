@@ -24,6 +24,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
     Route::group(['middleware' => ['auth']], function () {
         Route::get('logout', 'Admin\Auth\LoginController@logout')->name('logout');
+        Route::get('change_password', 'Admin\Auth\ChangePasswordController@getChangePassword')->name('change_password');
+        Route::post('change_password', 'Admin\Auth\ChangePasswordController@postChangePassword')->name('change_password');
         Route::get('menu', 'Admin\DashboardController@index')->name('menu');
     });
 });

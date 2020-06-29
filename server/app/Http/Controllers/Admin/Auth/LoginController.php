@@ -57,7 +57,7 @@ class LoginController extends Controller
     {
         return Validator::make($data, [
             'username' => 'required|string|max:25',
-            'password' => 'required|string|min:5',
+            'password' => 'required|string|min:5|max:20',
         ]);
     }
 

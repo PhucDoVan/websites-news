@@ -1,5 +1,6 @@
 @extends('admin.auth.master')
-@section('form')
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+@section('content')
     <!-- Sing in  Form -->
     <section class="sign-in">
         <div class="container">
