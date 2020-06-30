@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->softDeletes()->comment('deleted_at');
             $table->string('name', 50)->nullable()->comment('Name');
             $table->string('username', 50)->nullable()->unique('User_username_UNIQUE')->comment('UserName');
+            $table->string('email', 250)->nullable()->comment('Email');
             $table->string('password')->nullable()->comment('Password');
         });
     }

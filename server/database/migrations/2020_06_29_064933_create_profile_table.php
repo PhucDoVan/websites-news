@@ -20,7 +20,6 @@ class CreateProfileTable extends Migration
             $table->bigInteger('user_id')->unsigned()->index('profiles_user_FK')->comment('User Id');
             $table->string('full_name', 50)->nullable()->comment('FullName');
             $table->string('avatar')->nullable()->comment('Avatar');
-            $table->string('email', 250)->nullable()->comment('Email');
             $table->string('phone', 50)->nullable()->comment('Phone');
             $table->string('facebook', 250)->nullable()->comment('Facebook');
             $table->string('google', 250)->nullable()->comment('Google');

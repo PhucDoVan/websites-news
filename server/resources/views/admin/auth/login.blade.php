@@ -14,20 +14,24 @@
                 <div class="signin-form">
                     <h2 class="form-title">Sign up</h2>
                     <form method="POST" class="register-form" id="login-form">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
                         @csrf
                         <div class="form-group">
                             <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="username" placeholder="Username"/>
+                            <input type="text" name="username" placeholder="Username" value="{{old('username')}}"/>
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="password" placeholder="Password"/>
+                            <input type="password" name="password" placeholder="Password" value="{{old('password')}}"/>
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term"/>
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
                                 me</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-agree-term"><span><span></span></span>
+                                <a href="{{route('admin.forgot_password')}}">Forgot password</a>
+                            </label>
                         </div>
                         <div class="form-group form-button">
                             <input type="submit" name="signin" class="form-submit" value="Log In"/>
