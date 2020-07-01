@@ -8,21 +8,26 @@
                     <h3 class="mb-0">Forgot Password</h3>
                 </div>
                 <div class="card-body">
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <form class="form" action="{{route('admin.forgot_password')}}" method="post">
                         @csrf
-                        @if(session('error'))
-                            <div>
-                                {{ session('error') }}
-                            </div>
-                        @endif
-                        @if(session('success'))
-                            <div>
-                                {{ session('success') }}
-                            </div>
-                        @endif
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input id="email" type="email" class="form-control" name="email">
+                            @if ($errors->has('email'))
+                                <span class="help-block" style="color:red;">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
