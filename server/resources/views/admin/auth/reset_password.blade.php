@@ -25,7 +25,7 @@
                             <input id="password" type="password" class="form-control"
                                    name="password">
                             @if ($errors->has('password'))
-                                <span class="help-block" style="color:red;">
+                                <span class="alert-danger">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
                             @endif

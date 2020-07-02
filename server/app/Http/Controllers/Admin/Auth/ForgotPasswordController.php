@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -47,7 +48,7 @@ class ForgotPasswordController extends Controller
         );
     }
 
-    public function resetPassword(Request $request)
+    public function getResetPassword(Request $request)
     {
         $email = $request->email;
         $code = $request->code;
@@ -57,16 +58,39 @@ class ForgotPasswordController extends Controller
             'code' => $code,
         ])->first();
 
-        if($user == null){
-            return redirect('/')->with('error', 'Sorry, The path is not correct. Please try again later !');
+        if ($user == null) {
+            abort(Response::HTTP_NOT_FOUND);
         }
         return view('admin.auth.reset_password');
+    }
+
+    public function postResetPassword(Request $request)
+    {
+        $email = $request->email;
+        $code = $request->code;
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+        if ($request->password) {
+            $user = User::where([
+                'email' => $email,
+                'code' => $code,
+            ])->first();
+            if ($user == null) {
+                abort(Response::HTTP_NOT_FOUND);
+            }
+            $user->password = bcrypt($request->get('password'));
+            $user->save();
+            return redirect()->route('admin.login')->with('success', 'The password has been changed successfully. Please login ^-^');
+        }
+        return back()->withInput()->with('notify', trans('auth.failed'));
+
     }
 
     public function validator(array $data)
     {
         return Validator::make($data, [
-            //'password' => 'required|string',
             'password' => 'required|string|min:5|max:20|confirmed',
         ]);
     }
