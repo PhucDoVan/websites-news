@@ -15,8 +15,7 @@ class WebLogic
 {
     public function getDetailProfile($userId)
     {
-        return User::with('profiles')
-            ->find($userId);
+        return Profile::where('user_id', $userId)->get();
     }
 
     public function upsertProfiles(Request $request, Profile $profiles)
@@ -26,7 +25,6 @@ class WebLogic
         try {
             $profiles->fill($parameters);
             $profiles->user_id = Auth::user()->id;
-
 //            if ($parameters['avatar_tmp'] && $this->moveImage($parameters['avatar_tmp'])) {
 //                $profiles->avatar = $parameters['avatar_tmp'];
 //            }

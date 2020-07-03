@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Logic\WebLogic;
 use App\Models\Profile;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -15,13 +16,14 @@ class ProfilesController extends Controller
 
     public function __construct(WebLogic $webLogic)
     {
-        $this->webLogic       = $webLogic;
+        $this->webLogic = $webLogic;
     }
 
     public function getProfiles()
     {
         $userId     = Auth::user()->id;
         $profiles      = $this->webLogic->getDetailProfile($userId);
+        //dd($profiles);
         if (! $profiles) {
             abort(Response::HTTP_NOT_FOUND);
         }
