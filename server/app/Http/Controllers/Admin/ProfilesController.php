@@ -23,7 +23,6 @@ class ProfilesController extends Controller
     {
         $userId     = Auth::user()->id;
         $profiles      = $this->webLogic->getDetailProfile($userId);
-        //dd($profiles);
         if (! $profiles) {
             abort(Response::HTTP_NOT_FOUND);
         }
@@ -32,9 +31,9 @@ class ProfilesController extends Controller
         ]);
     }
 
-    public function postProfiles(Request $request, Profile $profile )
+    public function postProfiles(Request $request )
     {
-        $this->webLogic->upsertProfiles( $request, $profile);
+        $this->webLogic->upsertProfiles( $request);
         return redirect()->route('admin.profiles');
     }
 }

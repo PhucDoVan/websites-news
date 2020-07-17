@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title', 'Login')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/login/style.css')}}">
 @section('content')
     <!-- Sing in  Form -->
     <section class="sign-in">

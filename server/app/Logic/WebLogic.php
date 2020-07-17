@@ -18,29 +18,38 @@ class WebLogic
         return Profile::where('user_id', $userId)->get();
     }
 
-    public function upsertProfiles(Request $request, Profile $profiles)
+    public function upsertProfiles($parameters)
     {
-        $parameters = $request->all();
-        DB::beginTransaction();
+        $userId = Auth::user()->id;
+        DB::connection('mysql')->beginTransaction();
         try {
-            $profiles->fill($parameters);
-            $profiles->user_id = Auth::user()->id;
-//            if ($parameters['avatar_tmp'] && $this->moveImage($parameters['avatar_tmp'])) {
-//                $profiles->avatar = $parameters['avatar_tmp'];
-//            }
-            $profiles->save();
-            DB::commit();
+            foreach ($parameters['user_profiles'] as $key => $profiles) {
+                $profile = new Profile();
+                $isExistImage  = file_exists(Upload::UploadPath.$profiles['image_tmp']);
+                if (! ($isExistImage || ($profiles['image_tmp'] && $this->moveImage($profiles['image_tmp'])))) {
+                    continue;
+                }
+                $profiles['user_id']   = $userId;
+                $profiles['avatar'] = $profiles['image_tmp'];
+
+                $profile::updateOrCreate(
+                    ['id' => data_get($profiles, 'id')],
+                    $profiles
+                );
+            }
+            DB::connection('mysql')->commit();
+            return true;
         } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('WebLogic.upsertNews', $exception->getTrace());
+            DB::connection('mysql')->rollBack();
+            Log::error('WebLogic.upsertProfiles', $exception->getTrace());
             return false;
         }
     }
 
     public function moveImage($path)
     {
-        $oldPath = Upload::TmpPath.$path;
-        $newPath = Upload::UploadPath.$path;
+        $oldPath = Upload::TmpPath . $path;
+        $newPath = Upload::UploadPath . $path;
         return File::move($oldPath, $newPath);
     }
 }
