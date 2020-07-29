@@ -1,5 +1,5 @@
 <?php
-use BenSampo\Enum\EnumServiceProvider;
+
 return [
 
     /*
@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //ENUMを使用するため
-        EnumServiceProvider::class,
+//        BenSampo\Enum\EnumServiceProvider::class,
 
     ],
 
