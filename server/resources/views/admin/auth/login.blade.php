@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title', 'Login')
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/login/style.css')}}">
 @section('content')
     <!-- Sing in  Form -->
     <section class="sign-in">
@@ -24,9 +24,8 @@
                             <input type="password" name="password" placeholder="Password" value="{{old('password')}}"/>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term"/>
-                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
-                                me</label>
+                            <input type="checkbox" name="remember_me" id="remember_me" class="agree-term" value="{{ old('remember') ? 'checked' : '' }}">
+                            <label for="remember_me" class="label-agree-term">Remember me</label>
                         </div>
                         <div class="form-group">
                             <label class="label-agree-term"><span><span></span></span>
@@ -38,16 +37,16 @@
                         </div>
                     </form>
                     @if(isset($errors))
-                        <p style="color: red;">
+                        <div class="alert-danger">
                             @foreach($errors->all() as $error)
                                 {!! $error !!}<br/>
                             @endforeach
-                        </p>
+                        </div>
                     @endif
                     @if(isset($message))
-                        <p style="color: red;">
+                        <div class="alert-danger">
                             {!! $message !!}
-                        </p>
+                        </div>
                     @endif
                     <div class="social-login">
                         <span class="social-label">Or login with</span>

@@ -12,6 +12,9 @@ CREATE TABLE `users` (
   `username` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'UserName',
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Email',
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'password',
+  `remember_me` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Remember_me',
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Code',
+  `time_code` timestamp NULL DEFAULT NULL COMMENT 'TimeCode'
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -25,7 +28,7 @@ CREATE TABLE `profiles` (
   `created_at` timestamp NULL DEFAULT NULL COMMENT 'Created_at',
   `updated_at` timestamp NULL DEFAULT NULL COMMENT 'Updated_at',
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT 'Deleted_at',
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL COMMENT 'User Id',
+  `user_id` bigint(20) DEFAULT NULL COMMENT 'User Id',
   `full_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Full Name',
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Avatar',
   `phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Phone',

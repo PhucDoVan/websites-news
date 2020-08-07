@@ -1,0 +1,11 @@
+.img_preview{
+    border: 1px solid #000;
+    background: #FFF;
+    width: 100%;
+    min-height: 200px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+input[type=file]{
+    display:none !important;
+}

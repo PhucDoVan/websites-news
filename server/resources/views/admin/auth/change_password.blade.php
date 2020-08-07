@@ -7,6 +7,7 @@
                 <div class="card-header">
                     <h3 class="mb-0">Change Password</h3>
                 </div>
+                <div class="clearfix"></div>
                 <div class="card-body">
                     @if (session('error'))
                         <div class="alert alert-danger">
@@ -24,7 +25,7 @@
                             <label for="current-password">Current Password</label>
                             <input id="current-password" type="password" class="form-control" name="password">
                             @if ($errors->has('password'))
-                                <span class="help-block" style="color:red;">
+                                <span class="alert-danger">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
                             @endif
@@ -34,7 +35,7 @@
                             <input id="new-password" type="password" class="form-control"
                                    name="new-password">
                             @if ($errors->has('new-password'))
-                                <span class="help-block" style="color:red;">
+                                <span class="alert-danger">
                                     <strong>{{ $errors->first('new-password') }}</strong>
                                 </span>
                             @endif
