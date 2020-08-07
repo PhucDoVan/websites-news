@@ -25,7 +25,7 @@ CREATE TABLE `profiles` (
   `created_at` timestamp NULL DEFAULT NULL COMMENT 'Created_at',
   `updated_at` timestamp NULL DEFAULT NULL COMMENT 'Updated_at',
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT 'Deleted_at',
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL COMMENT 'User Id',
+  `user_id` bigint(20) DEFAULT NULL COMMENT 'User Id',
   `full_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Full Name',
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Avatar',
   `phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Phone',
