@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('username', 50)->nullable()->unique('User_username_UNIQUE')->comment('UserName');
             $table->string('email', 250)->nullable()->comment('Email');
             $table->string('password')->nullable()->comment('Password');
+            $table->string('remember_me', 100 )->nullable()->comment('Remember_me');
+            $table->string('code')->nullable()->comment('Code');
+            $table->timestamp('time_code')->nullable()->comment('TimeCode');
         });
     }
 
