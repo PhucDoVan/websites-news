@@ -12,6 +12,9 @@ CREATE TABLE `users` (
   `username` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'UserName',
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Email',
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'password',
+  `remember_me` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Remember_me',
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Code',
+  `time_code` timestamp NULL DEFAULT NULL COMMENT 'TimeCode'
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
